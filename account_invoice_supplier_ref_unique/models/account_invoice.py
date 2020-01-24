@@ -6,7 +6,7 @@ from odoo.exceptions import ValidationError
 
 
 class AccountInvoice(models.Model):
-    _inherit = "account.invoice"
+    _inherit = "account.move"
 
     supplier_invoice_number = fields.Char(
         string="Vendor invoice number",
@@ -76,7 +76,6 @@ class AccountInvoice(models.Model):
 
         return vals
 
-    @api.multi
     def copy(self, default=None):
         """
         The unique vendor invoice number is not copied in vendor bills

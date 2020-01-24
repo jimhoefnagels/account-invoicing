@@ -12,7 +12,7 @@ class TestAccountInvoiceSupplierRefUnique(SavepointCase):
 
         # ENVIRONMENTS
         cls.account_account = cls.env["account.account"]
-        cls.account_invoice = cls.env["account.invoice"].with_context(
+        cls.account_invoice = cls.env["account.move"].with_context(
             {"tracking_disable": True}
         )
 
